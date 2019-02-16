@@ -13,8 +13,8 @@
         "email": "support@pigeonapp.io"
     },
     "require": {
-        "illuminate/support": "5.*",
-        "pigeon/pigeon": "^0.1.0"
+        "illuminate/support": "^5.0",
+        "pigeon/pigeon": "dev-master"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^2.14"
