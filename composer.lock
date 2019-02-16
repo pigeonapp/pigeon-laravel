@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d060f4881b3a34dc16d1be6c2872cef9",
+    "content-hash": "7f789595be9e17bdadfcd62be4b927e1",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -419,7 +419,7 @@
         },
         {
             "name": "pigeon/pigeon",
-            "version": "dev-master",
+            "version": "v0.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pigeonapp/pigeon-php.git",
@@ -1877,9 +1877,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "pigeon/pigeon": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
