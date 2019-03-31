@@ -47,11 +47,70 @@ php artisan vendor:publish
 
 The settings can be found in the generated `config/pigeon.php` configuration file. By default, the keys would be retrieved from your .env file.
 
-
 ## Usage
 
+### Prepare for the delivery
+
+```php
+$message_identifier = 'message-identifier';
+$parcels = ['to' => 'john@example.com'];
 ```
-Pigeon::deliver('message-identifier', ['to' => 'user@example.com']);
+
+- Message identifier is used to identify the message. Grab this from your Pigeon dashboard.
+- Parcels array accepts `to`, `cc`, `bcc` and `data`.
+
+### Deliver
+
+```php
+Pigeon::deliver($message_identifier, $parcels);
+```
+
+### Parcel sample (Single recipient)
+
+```php
+$parcels = [
+  'to' => 'John Doe <john@example.com>',
+  'cc' => [
+    'admin@example.com',
+    'Sales Team <sales@example.com>'
+  ],
+  'data' => [
+    // template variables are added here
+    'name' => 'John'
+  ],
+  'attachments' => [
+    // `file` can be either local file path or remote URL
+    [
+      'file' => '/path/to/image.png',
+      'name' => 'Logo'
+    ],
+    [
+      'file' => 'https://example.com/guide.pdf',
+      'name' => 'Guide'
+    ]
+  ]
+];
+```
+
+### Parcel sample (Multiple recipients)
+
+```php
+$parcels = [
+  [
+    'to' => 'John Doe <john@example.com>',
+    'data' => [
+      // template variables are added here
+      'name' => 'John'
+    ]
+  ],
+  [
+    'to' => 'Jane Doe <jane@example.com>',
+    'data' => [
+      // template variables are added here
+      'name' => 'Jane'
+    ]
+  ],
+];
 ```
 
 ## Contributing
